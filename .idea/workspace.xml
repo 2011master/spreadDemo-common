@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b66cdf0c-90a3-4875-beb9-faf833170cb1" name="Default" comment="传统工厂模式">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/spreadDemo-common/src/main/java/pattern/factory/abstractfactory/domain/Button.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="b66cdf0c-90a3-4875-beb9-faf833170cb1" name="Default" comment="传统工厂模式" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/spreadDemo-common/target/" />
@@ -610,7 +606,7 @@
       <updated>1533957976984</updated>
       <workItem from="1533957978759" duration="15491000" />
       <workItem from="1534299332834" duration="6750000" />
-      <workItem from="1535958173604" duration="7791000" />
+      <workItem from="1535958173604" duration="8326000" />
     </task>
     <task id="LOCAL-00001" summary="remove">
       <created>1533985965052</created>
@@ -658,11 +654,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30032000" />
+    <option name="totallyTimeSpent" value="30567000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -673,7 +668,7 @@
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" weight="0.32976446" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.2784553" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.2784553" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Capture Tool" order="2" />

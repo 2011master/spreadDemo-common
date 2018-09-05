@@ -1,6 +1,6 @@
 package pattern.factory.abstractfactory.domain;
 
-public interface Button {
+public interface Text {
 
     void display();
 }

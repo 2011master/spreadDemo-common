@@ -1,5 +1,7 @@
 package set.treeset;
 
+import java.util.HashSet;
+import java.util.Set;
 import java.util.TreeSet;
 
 /**
@@ -16,8 +18,8 @@ import java.util.TreeSet;
 public class TreeSetCompareTest {
 
     public static void main(String[] args) {
-        implementCompare();
-
+//        implementCompare();
+        testSet();
     }
 
     public static void defaultCopare() {
@@ -49,6 +51,16 @@ public class TreeSetCompareTest {
         System.out.println("===>数量：" + peoples.size());
         System.out.println("===>内容：" + peoples.toString());
 
+    }
+
+    public static void testSet() {
+        Set<Person> people = new HashSet<>();
+        Person person2 = new Person("张三丰",26,"王家屯");
+        Person person3 = new Person("张三丰",24,"王家屯");
+        Person person4 = new Person("张一丰",24,"王家屯");
+        people.add(person2);
+        people.add(person3);
+        people.add(person4);
     }
 
 

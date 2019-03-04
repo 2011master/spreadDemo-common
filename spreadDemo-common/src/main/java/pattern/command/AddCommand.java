@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 具体命令类
+ * 具体命令类1，加法操作
  */
 public class AddCommand extends Command {
 

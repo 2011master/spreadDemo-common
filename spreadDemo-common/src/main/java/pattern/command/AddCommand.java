@@ -11,10 +11,9 @@ public class AddCommand extends Command {
     private int value;
     private Adder adder = new Adder();
     private static int count = 0;
-    public static Map<Integer, Integer> operaterDb = new HashMap<>();
+    private static Map<Integer, Integer> operaterDb = new HashMap<>();
 
     @Override
-
     public int execute(int value) {
         operaterDb.put(++count, value);
         this.value = value;

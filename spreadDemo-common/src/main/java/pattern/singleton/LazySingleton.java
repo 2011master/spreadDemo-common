@@ -6,9 +6,7 @@ package pattern.singleton;
 * @datetime 2018/8/13,上午9:26
 */
 public class LazySingleton {
-    /**
-     * UML 图见 https://www.processon.com/diagraming/5b6c31abe4b0edb75101f368
-     */
+
     //被volatile修饰的变量可确保多个线程都能够正确处理，但会屏蔽java的一些优化
     private volatile static LazySingleton instance = null;
 

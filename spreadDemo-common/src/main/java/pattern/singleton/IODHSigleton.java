@@ -1,9 +1,7 @@
 package pattern.singleton;
 
 public class IODHSigleton {
-    /**
-     * UML 图见 https://www.processon.com/diagraming/5b6c31abe4b0edb75101f368
-     */
+
     private IODHSigleton() {
 
     }

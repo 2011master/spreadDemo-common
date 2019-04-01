@@ -1,4 +1,4 @@
-package technologyStack.ARM;
+package kit.ARM;
 
 // Java program to illustrate
 // Automatic Resource Management 

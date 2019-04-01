@@ -1,4 +1,4 @@
-package technologyStack.interfaceDefault;
+package kit.interfaceDefault;
 
 /**
  * https://www.geeksforgeeks.org/default-methods-java/

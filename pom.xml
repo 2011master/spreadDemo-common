@@ -11,6 +11,8 @@
     <modules>
         <module>spreadDemo-common</module>
         <module>spreadDemo-hadoop</module>
+        <module>jdbcReview</module>
+        <module>spreadDemo-jdbc</module>
     </modules>
 
     <dependencyManagement>

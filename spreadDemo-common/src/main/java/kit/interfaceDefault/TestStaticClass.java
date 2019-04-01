@@ -1,4 +1,4 @@
-package technologyStack.interfaceDefault;
+package kit.interfaceDefault;
 
 class TestStaticClass implements TestInterfaceStaticMethod
 { 

@@ -1,13 +1,12 @@
-package technologyStack.ARM;
+package kit.ARM;
 /**
  * https://www.geeksforgeeks.org/automatic-resource-management-java/
  */
 // Java program to illustrate
 // Automatic Resource Management  
 // in Java without finally block 
-import java.io.*; 
-import java.io.*; 
-import java.util.*; 
+import java.io.*;
+
 class Resource  
 { 
     public static void main(String args[])  

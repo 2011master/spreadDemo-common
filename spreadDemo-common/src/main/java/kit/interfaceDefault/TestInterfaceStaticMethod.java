@@ -1,4 +1,4 @@
-package technologyStack.interfaceDefault;
+package kit.interfaceDefault;
 
 // A simple Java program to TestClassnstrate static
 // methods in java 

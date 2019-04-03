@@ -12,7 +12,7 @@
     <artifactId>spreadDemo-jdbc</artifactId>
 
     <dependencies>
-        <dependency>
+         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.6</version>
@@ -22,6 +22,11 @@
             <artifactId>mongodb-driver-sync</artifactId>
             <version>3.10.1</version>
         </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+
     </dependencies>
 
     <build>
@@ -57,7 +62,6 @@
             </plugin>
         </plugins>
         <defaultGoal>package</defaultGoal>
-
      </build>
 
 

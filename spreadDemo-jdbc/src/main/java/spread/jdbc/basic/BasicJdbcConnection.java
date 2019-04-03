@@ -51,15 +51,7 @@ public class BasicJdbcConnection {
             driver  = (Driver)Class.forName(properties.getProperty("driver")).newInstance();
             Connection connect = driver.connect(properties.getProperty("url"), properties);
             System.out.println(connect);
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
+        } catch (InstantiationException | IllegalAccessException | ClassNotFoundException | SQLException | IOException e) {
             e.printStackTrace();
         }
     }

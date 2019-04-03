@@ -8,6 +8,9 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+/**
+ * statement使用及sql注入
+ */
 public class ExecuteSqlTest {
 
     public static void executeSql(String sql) {
@@ -96,12 +99,46 @@ public class ExecuteSqlTest {
         System.out.println("不知道关没关");
     }
 
+
+    /**
+     * sql注入
+     */
+    public static void sqlSetTest(String userName,int pwd) {
+        String sql = "select * from user where name='" + userName + "' and password = " + pwd;
+        System.out.println("sql:"+sql);
+        try (Connection connection = JdbcUtil.getConnection();
+             Statement statement = connection.createStatement();
+        ){
+            try(ResultSet resultSet = statement.executeQuery(sql);) {
+                if (resultSet.next()) {
+                    String name = resultSet.getString("name");
+                    int password = resultSet.getInt("password");
+                    System.out.println(name + "," + password);
+                    System.out.println("登录成功！");
+                } else {
+                    System.out.println("用户不存在");
+                }
+
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("异常块");
+        }
+
+    }
+
     public static void main(String[] args) {
         String sql ;
 //        sql = "INSERT INTO person(`name`,age) VALUES('guo',26)";
 //        executeSql(sql);
-        sql = "select * from person";
-        resultSetTest(sql);
-        System.out.println("----end-----");
+//        sql = "select * from person";
+//        resultSetTest(sql);
+//        System.out.println("----end-----");
+
+        //sql注入
+//        sqlSetTest("zhangsan", 123456);
+//        sqlSetTest("zhangsan", 12345);
+        sqlSetTest("zhangsan' OR '1'='1 ", 12345);
     }
 }

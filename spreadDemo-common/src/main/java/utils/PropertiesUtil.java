@@ -14,11 +14,11 @@ public class PropertiesUtil {
             Properties properties = PropertiesLoaderUtils.loadProperties(new ClassPathResource("properties/test.properties"));
             String value = properties.getProperty(key, defaultValue);
             aClass = Class.forName(value);
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
+        } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         }
         return aClass;
     }
+
+
 }

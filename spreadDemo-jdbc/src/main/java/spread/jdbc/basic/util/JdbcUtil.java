@@ -6,9 +6,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Field;
 import java.sql.*;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Properties;
+import java.util.*;
 
 /**
  * 获取及关闭连接
@@ -33,7 +31,7 @@ public class JdbcUtil {
     }
 
 
-    public static <T> T getSelectObj(Class<T> classz,String sql,Object ... args) {
+    public static <T> List<T> getSelectObjs(Class<T> classz, String sql, Object ... args) {
         /**
          * 1，得到connection
          * 2，得到prepareStatement
@@ -43,7 +41,7 @@ public class JdbcUtil {
          * 6，获取对象属性及对应值保存到map中
          * 7，通过反射给实例化对象赋值
          */
-        Map<String, Object> contentMap = new HashMap<>();
+        List<T> list = new ArrayList<>();
         try (Connection connection = getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(sql);
              ) {
@@ -54,23 +52,32 @@ public class JdbcUtil {
             }
             try (ResultSet resultSet = preparedStatement.executeQuery()) {
                 if (resultSet.next()) {
+                    Map<String, Object> contentMap = new HashMap<>();
                     ResultSetMetaData metaData = resultSet.getMetaData();
                     for (int i = 0; i < metaData.getColumnCount(); i++) {
                         Object object = resultSet.getObject(metaData.getColumnLabel(i + 1));
                         contentMap.put(metaData.getColumnLabel(i + 1), object);
+                    }
+                    //赋值
+                    if (contentMap.size() > 0) {
+                        list.add(getObject(classz, contentMap));
                     }
                 }
             }
         } catch (IOException | SQLException | ClassNotFoundException e) {
             e.printStackTrace();
         }
-        //赋值
-        if (contentMap.size() > 0) {
-            return getObject(classz, contentMap);
-        }
-        return null;
+
+        return list;
     }
 
+    /**
+     * 通过反射实例化一个类
+     * @param classz
+     * @param map
+     * @param <T>
+     * @return
+     */
     public static <T> T getObject(Class<T> classz,Map<String,Object> map) {
         T t = null;
         try {
@@ -93,7 +100,6 @@ public class JdbcUtil {
     public static void main(String[] args) {
 
         String sql = "select name,age from person";
-        Person selectObj = getSelectObj(Person.class, sql, null);
-        System.out.println(selectObj.toString());
+          getSelectObjs(Person.class, sql, null);
     }
 }

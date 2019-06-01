@@ -97,6 +97,49 @@ public class JdbcUtil {
         return t;
     }
 
+    /**
+     * 开启事务
+     * @param connection
+     */
+    public static void beginTransaction(Connection connection) {
+        if (connection != null) {
+            try {
+                connection.setAutoCommit(false);
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    /**
+     * 提交事务
+     * @param connection
+     */
+    public static void commitTransaction(Connection connection) {
+        if (connection != null) {
+            try {
+                connection.commit();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    /**
+     * 回滚事务
+     * @param connection
+     */
+    public static void rollbackTransaction(Connection connection) {
+        if (connection != null) {
+            try {
+                connection.rollback();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }
+
+
     public static void main(String[] args) {
 
         String sql = "select name,age from person";

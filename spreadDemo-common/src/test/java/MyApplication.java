@@ -1,3 +1,5 @@
+import common.tryBlock.Test2;
+
 class Test {
     public static void hello() {
         System.out.println("hello");
@@ -6,7 +8,7 @@ class Test {
 public class MyApplication {
     public static void main(String[] args) {
         // TODO Auto-generated method stub
-        Test test=null;
-        test.hello();
+        Test2 test=null;
+//        test.hello();
     }
 }

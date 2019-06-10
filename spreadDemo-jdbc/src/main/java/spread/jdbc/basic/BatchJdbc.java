@@ -38,7 +38,7 @@ public class BatchJdbc {
             JdbcUtil.commitTransaction(connection);
             System.out.println("执行完毕："+stopwatch.stop());
             //执行完毕：1.610 min
-        } catch (IOException | SQLException | ClassNotFoundException e) {
+        } catch (SQLException  e) {
             e.printStackTrace();
             JdbcUtil.rollbackTransaction(connection);
         }
@@ -65,7 +65,7 @@ public class BatchJdbc {
             JdbcUtil.commitTransaction(connection);
             System.out.println("执行完毕："+stopwatch.stop());
             //执行完毕：37.63 s
-        } catch (IOException | SQLException | ClassNotFoundException e) {
+        } catch (  SQLException  e) {
             e.printStackTrace();
             JdbcUtil.rollbackTransaction(connection);
         }
@@ -101,7 +101,7 @@ public class BatchJdbc {
             JdbcUtil.commitTransaction(connection);
             System.out.println("执行完毕："+stopwatch.stop());
             //执行完毕：37.38 s
-        } catch (IOException | SQLException | ClassNotFoundException e) {
+        } catch (  SQLException  e) {
             e.printStackTrace();
             JdbcUtil.rollbackTransaction(connection);
         }

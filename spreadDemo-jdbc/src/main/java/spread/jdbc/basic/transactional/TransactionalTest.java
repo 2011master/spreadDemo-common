@@ -55,7 +55,7 @@ public class TransactionalTest {
         try(Connection connection = JdbcUtil.getConnection();) {
             update(connection,sqls);
 
-        } catch (IOException | ClassNotFoundException | SQLException e) {
+        } catch (  SQLException e) {
             e.printStackTrace();
         }
     }

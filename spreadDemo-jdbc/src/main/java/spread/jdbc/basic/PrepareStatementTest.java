@@ -29,7 +29,7 @@ public class PrepareStatementTest {
             int i = preparedStatement.executeUpdate();
             System.out.println("执行完毕："+i);
 
-        } catch (IOException | ClassNotFoundException | SQLException e) {
+        } catch (  SQLException e) {
             e.printStackTrace();
         }
 

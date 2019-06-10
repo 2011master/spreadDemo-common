@@ -1,7 +1,9 @@
 package spread.jdbc.basic.util;
 
+import com.mchange.v2.c3p0.ComboPooledDataSource;
 import spread.jdbc.basic.domain.Person;
 
+import javax.sql.DataSource;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Field;
@@ -14,20 +16,19 @@ import java.util.*;
 public class JdbcUtil {
 
 
+    public static DataSource dataSource = null;
+
+    static {
+        dataSource = new ComboPooledDataSource("intergalactoApp");
+    }
+
     /**
      * 获取连接
      * @return
-     * @throws IOException
-     * @throws ClassNotFoundException
      * @throws SQLException
      */
-    public static Connection getConnection() throws IOException, ClassNotFoundException, SQLException {
-        Properties properties = new Properties();
-
-        InputStream inputStream = JdbcUtil.class.getClassLoader().getResourceAsStream("db.properties");
-        properties.load(inputStream);
-        Class.forName(properties.getProperty("driver"));
-        return DriverManager.getConnection(properties.getProperty("url"), properties);
+    public static Connection getConnection() throws  SQLException {
+        return dataSource.getConnection();
     }
 
 
@@ -64,7 +65,7 @@ public class JdbcUtil {
                     }
                 }
             }
-        } catch (IOException | SQLException | ClassNotFoundException e) {
+        } catch ( SQLException e) {
             e.printStackTrace();
         }
 
@@ -140,9 +141,11 @@ public class JdbcUtil {
     }
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
 
         String sql = "select name,age from person";
-          getSelectObjs(Person.class, sql, null);
+//          getSelectObjs(Person.class, sql, null);
+
+        System.out.println(getConnection().getClass());
     }
 }

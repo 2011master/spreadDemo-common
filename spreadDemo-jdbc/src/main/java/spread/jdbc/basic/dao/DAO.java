@@ -31,7 +31,7 @@ public class DAO {
             }
             preparedStatement.execute();
             System.out.println("更新完毕");
-        } catch (IOException | SQLException | ClassNotFoundException e) {
+        } catch ( SQLException  e) {
             e.printStackTrace();
         }
     }

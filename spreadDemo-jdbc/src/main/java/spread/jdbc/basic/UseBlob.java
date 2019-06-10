@@ -40,7 +40,7 @@ public class UseBlob {
                 preparedStatement.execute();
                 System.out.println("执行完毕！");
             }
-        } catch (IOException | ClassNotFoundException | SQLException e) {
+        } catch ( SQLException e) {
             e.printStackTrace();
         }
 
@@ -75,7 +75,7 @@ public class UseBlob {
                 }
                 System.out.println("执行完毕！");
             }
-        } catch (IOException | ClassNotFoundException | SQLException e) {
+        } catch (IOException  | SQLException e) {
             e.printStackTrace();
         }
     }

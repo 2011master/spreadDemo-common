@@ -1,0 +1,5 @@
+#Simple properties
+mail:
+  hostname: host@mail.com
+  port: 9000
+  from: mailer@mail.com

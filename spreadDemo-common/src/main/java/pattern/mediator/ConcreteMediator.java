@@ -4,7 +4,7 @@ public class ConcreteMediator implements Mediator{
 
     public Button button;
     public ComboBox comboBox;
-    public List list;
+    public ListInfo list;
     public TextBox textBox;
 
     @Override

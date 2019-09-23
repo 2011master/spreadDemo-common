@@ -1,6 +1,6 @@
 package pattern.mediator;
 
-public class List extends Component {
+public class ListInfo extends Component {
 
 
     @Override

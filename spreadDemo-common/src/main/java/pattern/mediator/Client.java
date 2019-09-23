@@ -7,7 +7,7 @@ public class Client {
         ConcreteMediator mediator = new ConcreteMediator();
 
         Button button = new Button();
-        List list = new List();
+        ListInfo list = new ListInfo();
         TextBox textBox = new TextBox();
         ComboBox comboBox = new ComboBox();
 

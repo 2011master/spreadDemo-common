@@ -1,14 +1,16 @@
 package spread.jdbc.basic.util;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
-import spread.jdbc.basic.domain.Person;
 
 import javax.sql.DataSource;
-import java.io.IOException;
-import java.io.InputStream;
 import java.lang.reflect.Field;
+import java.lang.reflect.ParameterizedType;
+import java.lang.reflect.Type;
 import java.sql.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * 获取及关闭连接
@@ -140,6 +142,29 @@ public class JdbcUtil {
         }
     }
 
+    public static<T> Class<T> getSuperGenericType(Class clazz){
+        return getSuperClassGenricType(clazz, 0);
+    }
+
+    public static Class getSuperClassGenricType(Class clazz, int index){
+        Type genType = clazz.getGenericSuperclass();
+
+        if(!(genType instanceof ParameterizedType)){
+            return Object.class;
+        }
+
+        Type[] params = ((ParameterizedType)genType).getActualTypeArguments();
+
+        if(index >= params.length || index < 0){
+            return Object.class;
+        }
+
+        if(!(params[index] instanceof Class)){
+            return Object.class;
+        }
+
+        return (Class) params[index];
+    }
 
     public static void main(String[] args) throws SQLException {
 

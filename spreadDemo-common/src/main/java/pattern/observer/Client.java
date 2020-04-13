@@ -1,5 +1,7 @@
 package pattern.observer;
 
+import java.util.Observable;
+
 public class Client {
 
     public static void main(String[] args) {
@@ -18,5 +20,8 @@ public class Client {
         center.join(player3);
 
         player1.beAttacked(center);
+
     }
+
+
 }

@@ -1,7 +1,9 @@
 package common.stream.clone;
 
 
-public class User extends SerialCloneable{
+public class User extends SerialCloneable<User>{
+
+    private static final long serialVersionUID = -6032511875994478300L;
 
     private Long id;
     private String name;
@@ -21,5 +23,8 @@ public class User extends SerialCloneable{
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public static void main(String[] args) {
     }
 }

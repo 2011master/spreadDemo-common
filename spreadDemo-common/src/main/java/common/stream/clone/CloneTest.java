@@ -10,7 +10,7 @@ public class CloneTest {
         user.setId(1000L);
         user.setName("test");
 
-        User clone = (User) user.cloneBySerializable();
+        User clone =  user.cloneBySerializable();
 
         System.out.println(JsonUtil.convertToJson(clone));
     }

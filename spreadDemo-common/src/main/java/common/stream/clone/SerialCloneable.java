@@ -8,7 +8,7 @@ import java.io.*;
 * @author kanggw
 * @datetime 2020/4/29,8:44 下午
 */
-public class SerialCloneable implements Cloneable, Serializable {
+public class SerialCloneable<T> implements Cloneable, Serializable {
 
     private static final long serialVersionUID = -5163165711834713161L;
 
@@ -18,7 +18,7 @@ public class SerialCloneable implements Cloneable, Serializable {
      * 实现的原理就是将当前对象先写入输出流，然后在通过输入流读到内存，这里的输入，输出是相对内存而言的。
      * @return 克隆后对象
      */
-    public Object cloneBySerializable() throws CloneNotSupportedException {
+    public T cloneBySerializable() throws CloneNotSupportedException {
 
         //创建字节输出流
         ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
@@ -33,7 +33,7 @@ public class SerialCloneable implements Cloneable, Serializable {
             try ( ByteArrayInputStream byteArrayInputStream = new ByteArrayInputStream(byteArrayOutputStream.toByteArray())){
 
                 ObjectInputStream objectInputStream = new ObjectInputStream(byteArrayInputStream);
-                return objectInputStream.readObject();
+                return (T)objectInputStream.readObject();
             }
         } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();

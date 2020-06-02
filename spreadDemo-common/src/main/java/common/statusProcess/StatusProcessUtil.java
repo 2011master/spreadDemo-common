@@ -94,13 +94,6 @@ public class StatusProcessUtil {
                 //以二进制形式输出
                 System.out.println("状态结果输出,线程"+ Thread.currentThread().getName() +":"  + Integer.toBinaryString(statusTable.getStatus()));
 
-                /**
-                 * print
-                 * 线程0:1
-                 * 线程1:11
-                 * 线程2:111
-                 * 线程3:1111
-                 */
             });
         });
 

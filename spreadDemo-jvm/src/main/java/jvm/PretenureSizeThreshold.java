@@ -14,7 +14,11 @@ public class PretenureSizeThreshold {
     public static void testPretenureSizeThreshold() {
 
         byte[] allocation;
-        allocation = new byte[4 * _1MB];
+        allocation = new byte[1 * _1MB];
+
+        allocation = null;
+
+        System.gc();
     }
 
     public static void main(String[] args) {

@@ -4,9 +4,9 @@
     <named-config name="intergalactoApp">
 
         <property name="driverClass">com.mysql.jdbc.Driver</property>
-        <property name="jdbcUrl">jdbc:MySQL://localhost:3306/test01</property>
-        <property name="user">root</property>
-        <property name="password">123456</property>
+        <property name="jdbcUrl">jdbc:MySQL://192.168.166.17:3306/fms_skucost</property>
+        <property name="user">admin</property>
+        <property name="password">bk_test_*()</property>
 
         <property name="acquireIncrement">5</property>
         <property name="initialPoolSize">3</property>

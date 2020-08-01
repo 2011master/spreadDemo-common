@@ -1,5 +1,8 @@
 package jvm;
 
+
+import java.util.List;
+
 /**
 * @desc
  * 创建线程导致内在溢出异常
@@ -47,4 +50,7 @@ public class JavaVMStackOOM {
 
         stackOOM.stackLeakByThread();
     }
+
+
+
 }

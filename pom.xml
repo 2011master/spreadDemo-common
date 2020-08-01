@@ -26,6 +26,7 @@
         <module>spreadDemo-hadoop</module>
         <module>spreadDemo-jdbc</module>
         <module>spreadDemo-jvm</module>
+        <module>spreadDemo-concurrent</module>
     </modules>
 
     <repositories>

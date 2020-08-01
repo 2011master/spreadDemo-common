@@ -1,6 +1,8 @@
 package spread.jdbc.basic.util;
 
 import com.mchange.v2.c3p0.ComboPooledDataSource;
+import spread.jdbc.basic.domain.Person;
+import spread.jdbc.basic.domain.Skucost;
 
 import javax.sql.DataSource;
 import java.lang.reflect.Field;
@@ -168,8 +170,8 @@ public class JdbcUtil {
 
     public static void main(String[] args) throws SQLException {
 
-        String sql = "select name,age from person";
-//          getSelectObjs(Person.class, sql, null);
+        String sql = "select * from skucost_1";
+        final List<Skucost> selectObjs = getSelectObjs(Skucost.class, sql, null);
 
         System.out.println(getConnection().getClass());
     }

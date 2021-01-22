@@ -7,6 +7,7 @@
         <groupId>master.demo</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
+
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>spreadDemo-common</artifactId>
@@ -74,11 +75,6 @@
             <version>4.5.11</version>
         </dependency>
 
-        <!--junit-->
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-        </dependency>
 
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -98,6 +94,7 @@
             <version>2.6</version>
         </dependency>
 
+
         <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-collections4 -->
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -116,6 +113,8 @@
 
 
     </dependencies>
+
+
     <build>
         <sourceDirectory>src/main/java</sourceDirectory>
         <testSourceDirectory>src/test/java</testSourceDirectory>

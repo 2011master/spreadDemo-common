@@ -9,6 +9,61 @@
     <artifactId>spreadDemo</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+
+
+    <modules>
+        <module>spreadDemo-common</module>
+        <module>spreadDemo-hadoop</module>
+        <module>spreadDemo-jdbc</module>
+        <module>spreadDemo-jvm</module>
+        <module>spreadDemo-concurrent</module>
+    </modules>
+
+    <dependencies>
+        <!--lombok-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.18</version>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>28.0-jre</version>
+        </dependency>
+
+    </dependencies>
+
+    <repositories>
+        <!-- 192.168.0.201远程仓库 -->
+<!--        <repository>-->
+<!--            <id>aliyun</id>-->
+<!--            <name>aliyun</name>-->
+<!--            <layout>default</layout>-->
+<!--            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>-->
+<!--            <snapshots>-->
+<!--                <enabled>true</enabled>-->
+<!--            </snapshots>-->
+<!--        </repository>-->
+        <!--<repositorypository>-->
+        <!--<id>default</id>-->
+        <!--<name>default</name>-->
+        <!--<layout>default</layout>-->
+        <!--<url>http://repo1.maven.org/maven2/</url>-->
+        <!--<snapshots>-->
+        <!--<enabled>true</enabled>-->
+        <!--</snapshots>-->
+        <!--</repository>-->
+    </repositories>
+
     <build>
         <plugins>
             <plugin>
@@ -21,55 +76,6 @@
             </plugin>
         </plugins>
     </build>
-    <modules>
-        <module>spreadDemo-common</module>
-        <module>spreadDemo-hadoop</module>
-        <module>spreadDemo-jdbc</module>
-        <module>spreadDemo-jvm</module>
-        <module>spreadDemo-concurrent</module>
-    </modules>
 
-    <repositories>
-        <!-- 192.168.0.201远程仓库 -->
-        <repository>
-            <id>aliyun</id>
-            <name>aliyun</name>
-            <layout>default</layout>
-            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-        <!--<repositorypository>-->
-            <!--<id>default</id>-->
-            <!--<name>default</name>-->
-            <!--<layout>default</layout>-->
-            <!--<url>http://repo1.maven.org/maven2/</url>-->
-            <!--<snapshots>-->
-                <!--<enabled>true</enabled>-->
-            <!--</snapshots>-->
-        <!--</repository>-->
-    </repositories>
-
-        <dependencies>
-            <!--lombok-->
-            <dependency>
-                <groupId>org.projectlombok</groupId>
-                <artifactId>lombok</artifactId>
-                <version>1.16.18</version>
-            </dependency>
-
-            <dependency>
-                <groupId>junit</groupId>
-                <artifactId>junit</artifactId>
-            </dependency>
-
-            <dependency>
-                <groupId>com.google.guava</groupId>
-                <artifactId>guava</artifactId>
-                <version>28.0-jre</version>
-            </dependency>
-
-        </dependencies>
 
 </project>

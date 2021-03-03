@@ -3,13 +3,30 @@ package common;
 
 import org.joda.time.DateTime;
 
+import java.util.stream.IntStream;
+
 public class JodaTimeTest {
 
     public static void main(String[] args) {
 
 
+        getForNum();
 
-        for (int i = 1; i <= 2; i++) {
+//        getForDate();
+
+//        getDateByDiffDay();
+
+    }
+
+    private static void getForNum() {
+
+        IntStream.rangeClosed(0,99).forEach(i -> {
+            System.out.println("create unique index unique_key on price_detail_"+i+" (uniqueKey);");
+        });
+    }
+
+    private static void getForDate() {
+        for (int i = 2; i <= 4; i++) {
 
             DateTime dateTime = new DateTime(2021,i,1,0,0);
 
@@ -18,24 +35,10 @@ public class JodaTimeTest {
             for (int j = 1; j <= lastDay; j++) {
                 DateTime day = new DateTime(dateTime.getYear(),i,j,1,1);
                 final String yyyymMdd = day.toString("YYYYMMdd");
-                System.out.println("CREATE TABLE `price_cost_"+yyyymMdd+"` (\n" +
-                        "  `id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT '自增id',\n" +
-                        "  `wid` bigint(20) NOT NULL DEFAULT '0' COMMENT '商品sku',\n" +
-                        "  `Day` date NOT NULL COMMENT '仓报介生成日期',\n" +
-                        "  `channelId` varchar(50) NOT NULL COMMENT '渠道id',\n" +
-                        "  `orgId` int(11) NOT NULL COMMENT '渠道id',\n" +
-                        "  `price` decimal(18,4) DEFAULT NULL COMMENT '成本价',\n" +
-                        "  `quantity` int(11) DEFAULT NULL COMMENT '数量',\n" +
-                        "  `createTime` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',\n" +
-                        "  PRIMARY KEY (`id`),\n" +
-                        "  UNIQUE KEY `unique_key` (`wid`,`orgId`,`channelId`)\n" +
-                        ") ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='仓报价查询表'");
+                System.out.println("create table price_cost_"+yyyymMdd+" like price_cost_20210223 ;");
             }
 
         }
-
-//        getDateByDiffDay();
-
     }
 
 
@@ -54,4 +57,6 @@ public class JodaTimeTest {
         System.out.println("2020 plus:" + plus.toString());
 
     }
+
+
 }

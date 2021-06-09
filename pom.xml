@@ -17,6 +17,7 @@
         <module>spreadDemo-jdbc</module>
         <module>spreadDemo-jvm</module>
         <module>spreadDemo-concurrent</module>
+        <module>spreadDemo-dataStruct</module>
     </modules>
 
     <dependencies>

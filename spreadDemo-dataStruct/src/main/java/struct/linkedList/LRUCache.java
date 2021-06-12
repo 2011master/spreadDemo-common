@@ -1,6 +1,7 @@
 package struct.linkedList;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class LRUCache {
@@ -98,4 +99,6 @@ public class LRUCache {
             node.right.left = node.left;
         }
     }
+
+ 
 }

@@ -7,13 +7,16 @@ package pattern.singleton;
 */
 public class HungrySingleton {
 
-    private static final HungrySingleton instance = new HungrySingleton();
+    private HungrySingleton() {
 
-    private HungrySingleton( ) {
+    }
+
+    static class HolderClass{
+        private final static HungrySingleton instance = new HungrySingleton();
     }
 
     public static HungrySingleton getInstance() {
-
-        return instance;
+        return HolderClass.instance;
     }
+
 }

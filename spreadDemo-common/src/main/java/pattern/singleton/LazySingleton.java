@@ -7,22 +7,24 @@ package pattern.singleton;
 */
 public class LazySingleton {
 
-    //被volatile修饰的变量可确保多个线程都能够正确处理，但会屏蔽java的一些优化
-    private volatile static LazySingleton instance = null;
+  private volatile static LazySingleton instance = null;
 
-    private LazySingleton( ) {
+    private LazySingleton() {
+        this.instance = new LazySingleton();
     }
 
-    public static LazySingleton getInstance() {
-    //双重检查锁机制
-        if (null == instance) {
-            //锁定代码块
-            synchronized (LazySingleton.class) {
-                if (null == instance) {
-                    return new LazySingleton();
-                }
-            }
-        }
+
+  public static LazySingleton getInstance(){
+
+      if (null == instance) {
+          synchronized (LazySingleton.class){
+              if (null == instance) {
+                  instance = getInstance();
+              }
+          }
+      }
+
         return instance;
-    }
+  }
+
 }
